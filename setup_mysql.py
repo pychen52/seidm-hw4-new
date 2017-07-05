@@ -52,7 +52,8 @@ cursor.execute("""CREATE TABLE a136 (
                 t_24h FLOAT(6,1) DEFAULT NULL,
                 t_today FLOAT(6,1) DEFAULT NULL,
                 t_yday FLOAT(6,1) DEFAULT NULL,
-                t_2d FLOAT(6,1) DEFAULT NULL
+                t_2d FLOAT(6,1) DEFAULT NULL,
+                update_time DATETIME NOT NULL
                 ) ENGINE=InnoDB""")
 cursor.close()
 conn.close()

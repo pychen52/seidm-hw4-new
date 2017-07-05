@@ -22,3 +22,4 @@ class CwbItem(scrapy.Item):
     t_today = scrapy.Field()
     t_yday = scrapy.Field()
     t_2d = scrapy.Field()
+    update_time = scrapy.Field()

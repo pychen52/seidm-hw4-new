@@ -18,7 +18,7 @@ class CwbPipeline(object):
         self.cursor = self.conn.cursor()
 
     def process_item(self, item, spider):
-        self.cursor.execute("""INSERT INTO a136 (sid, name, t_10m, t_1h, t_3h, t_6h, t_12h, t_24h, t_today, t_yday, t_2d) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",(
+        self.cursor.execute("""INSERT INTO a136 (sid, name, t_10m, t_1h, t_3h, t_6h, t_12h, t_24h, t_today, t_yday, t_2d,update_time) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",(
             item['sid'],
             item['name'],
             item['t_10m'],
@@ -29,7 +29,8 @@ class CwbPipeline(object):
             item['t_24h'],
             item['t_today'],
             item['t_yday'],
-            item['t_2d']
+            item['t_2d'],
+            item['update_time']
         ))  
         self.conn.commit()
         #self.conn.close()
